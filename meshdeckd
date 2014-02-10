@@ -10,7 +10,7 @@
 #                    stop the MeshDeck drone daemon.
 ### END INIT INFO
 
-# Author: Dr. Phil Polstra <ppolstra@dbq.edu>
+# Author: Dr. Phil Polstra <ppolstra@gmail.com>
 #
 # Part of the MeshDeck addon to The Deck as originally
 # presented at BlackHat Europe 2013.
@@ -158,4 +158,3 @@ case "$1" in
 	;;
 esac
 
-:

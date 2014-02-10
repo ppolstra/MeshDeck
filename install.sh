@@ -2,8 +2,9 @@
 
 # Install script for the MeshDeck addon to The Deck
 # Initially created for a presentation at Blackhat EU 2013
-#
-# Author: Dr. Phil Polstra
+# This version 2.0 was created for the book
+# Hacking and Penetration Testing With Low Power Devices
+# by Dr. Phil Polstra
 #
 # Public domain, no warranty, etc. etc.
 #
@@ -21,12 +22,12 @@ command -v python >/dev/null 2>&1 || {
 
 # extract XBee Python module to /tmp then install
 echo "Installing XBee Python module"
-tar -xzf XBee-2.0.0.tar.gz -C /tmp || {
+tar -xzf XBee-2.1.0.tar.gz -C /tmp || {
   echo "Could not install XBee module";
   exit 1; }
 
 currdir=$PWD
-cd /tmp/XBee-2.0.0
+cd /tmp/XBee-2.1.0
 python setup.py install || {
   echo "XBee module install failed";
   exit 1; }
@@ -46,7 +47,7 @@ if [ ! -h /usr/sbin/meshdeckd ]; then
   exit 1; } ;
 fi  
 
-# create file in /etc/init.dn
+# create file in /etc/init.d
 (cp meshdeckd /etc/init.d/. && chmod 744 /etc/init.d/meshdeckd) || {
   echo "Failed to create daemon script in /etc/init.d";
   exit 1; }
